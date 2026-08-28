@@ -1,21 +1,18 @@
 import { Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import Toast from 'react-native-toast-message';
 
-// Components
-import { Wrapper } from './src/components/Wrapper';
-import { Header } from './src/components/Header';
+// Routes
+import { Routes } from './src/routes/Routes/index';
 
 // Global CSS
 import "./global.css"
  
 export default function App() {
   return (
-    <Wrapper>
-      <Header />
-      <View className="border-4 border-red-600">
-        <Text className='text-xl'>
-          Welcome to Nativewind!
-        </Text>
-      </View>
-    </Wrapper>
+    <NavigationContainer>
+      <Routes />
+      <Toast />
+    </NavigationContainer>
   );
 }
