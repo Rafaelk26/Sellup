@@ -1,20 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 
+// Components
+import { Wrapper } from './src/components/Wrapper';
+import { Header } from './src/components/Header';
+
+// Global CSS
+import "./global.css"
+ 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Wrapper>
+      <Header />
+      <View className="border-4 border-red-600">
+        <Text className='text-xl'>
+          Welcome to Nativewind!
+        </Text>
+      </View>
+    </Wrapper>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
