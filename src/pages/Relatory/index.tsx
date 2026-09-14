@@ -1,7 +1,30 @@
-import { Text, View } from 'react-native';
+import React from "react";
+import { UserContext } from "../../context/User";
 
-export default function Relatory() {
- return (
-    <Text>PÁGINA DE RELATÓRIOS</Text>
-  );
+// Components
+import { RelatoryContent } from "./components/RelatoryContent";
+import { RelatorySkeleton } from "./components/RelatorySkeleton";
+import { Wrapper } from "../../components/Wrapper";
+
+export default function Relatory(){
+
+    const [loading, setLoading] = React.useState<boolean>(true);
+    const { user, clearUser, updateUser } = React.useContext(UserContext);
+
+    // Omite durante 10s o content, depois exibe. (Simulando um skeleton no dashboard)
+    React.useEffect(()=> {
+        setTimeout(()=> {
+            setLoading(false);
+        }, 10000);
+    }, []);
+
+    return(
+        <Wrapper>
+            { loading 
+                ? <RelatorySkeleton /> 
+                : <RelatoryContent user={user} clearUser={clearUser} updateUser={updateUser} /> 
+            }
+        </Wrapper>
+        
+    );
 }

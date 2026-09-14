@@ -19,7 +19,7 @@ export function Input({value, onChangeText}: InputProps) {
              placeholder="Email"
              placeholderTextColor="#BEBEBE"
              className="bg-inputBackground font-urbanist text-white text-xl font-medium border border-border rounded-lg px-4 py-4
-            focus:border-inputFocus"
+            focus:border-inputFocus focus:border-primary focus:placeholder:text-primary/60"
             />
         </View>
     )
@@ -52,7 +52,7 @@ export function InputPassword({value, onChangeText}: InputProps) {
              autoCapitalize="none"
              autoCorrect={false}
              className="bg-inputBackground font-urbanist text-white text-xl font-medium border border-border rounded-lg px-4 py-4
-            focus:border-inputFocus"
+            focus:border-inputFocus focus:border-primary focus:placeholder:text-primary/60"
             />
             <Pressable
              onPressIn={handleTogglePasswordVisibility}

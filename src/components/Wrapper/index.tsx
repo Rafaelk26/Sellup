@@ -8,7 +8,7 @@ interface WrapperProps{
 export function Wrapper({ children }: WrapperProps){
     return(
         <SafeAreaView>
-            { children }
+            {children}
         </SafeAreaView>
     )
 }

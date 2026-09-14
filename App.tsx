@@ -16,6 +16,9 @@ import {
   Urbanist_700Bold,
 } from '@expo-google-fonts/urbanist';
 
+// Context
+import { UserProvider } from './src/context/User';
+
 // Routes
 import { Routes } from './src/routes/Routes/index';
 
@@ -42,10 +45,18 @@ export default function App() {
   }
 
   return (
-    <NavigationContainer theme={theme}>
-      <StatusBar barStyle={'light-content'} />
-      <Routes />
-      <Toast />
-    </NavigationContainer>
+    <UserProvider>
+      <NavigationContainer theme={theme}>
+        <StatusBar barStyle={'light-content'} />
+        <Routes />
+        <Toast
+        animationConfig={{
+          restSpeedThreshold: 20,
+          speed: 2,
+          bounciness: 10,
+          type: 'spring',
+        }} />
+      </NavigationContainer>
+    </UserProvider>
   );
 }
